@@ -1,0 +1,826 @@
+
+/* ========================================
+   NATANT SHIELD LIMITED
+   SELLER PORTAL STYLING
+======================================== */
+
+
+/* GLOBAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #102A24;
+    --secondary: #247653;
+    --secondary-dark: #195C40;
+    --gold: #D6A75D;
+    --background: #F5F6F2;
+    --white: #FFFFFF;
+    --text: #26332D;
+    --muted: #7B8580;
+    --border: #E2E8E3;
+    --danger: #C74646;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ========================================
+   MAIN LAYOUT
+======================================== */
+
+.seller-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.seller-sidebar {
+    width: 255px;
+    min-height: 100vh;
+    background: var(--primary);
+    color: var(--white);
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.seller-brand {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 1px 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.seller-brand img {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.seller-brand h2 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.seller-brand p {
+    color: #B8C8BF;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+
+/* NAVIGATION */
+
+.seller-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 14px;
+    border-radius: 8px;
+    color: #D2DDD6;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.nav-link span {
+    width: 22px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+.back-home {
+    display: block;
+    padding: 13px;
+    border-radius: 8px;
+    color: #D2DDD6;
+    font-size: 13px;
+    transition: 0.25s ease;
+}
+
+.back-home:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+}
+
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.seller-main {
+    flex: 1;
+    min-width: 0;
+    padding: 30px 35px;
+}
+
+
+/* TOPBAR */
+
+.seller-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 30px;
+}
+
+.welcome-label {
+    color: var(--secondary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.seller-topbar h1 {
+    font-size: 25px;
+    color: var(--primary);
+}
+
+.seller-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-avatar {
+    width: 43px;
+    height: 43px;
+    background: #E4EFE7;
+    color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.seller-profile h3 {
+    font-size: 13px;
+}
+
+.seller-profile p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+
+/* ========================================
+   PAGE SECTIONS
+======================================== */
+
+.seller-section {
+    display: none;
+    animation: sectionFade 0.3s ease;
+}
+
+.seller-section:first-of-type {
+    display: block;
+}
+
+@keyframes sectionFade {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashboard-heading,
+.page-heading {
+    margin-bottom: 25px;
+}
+
+.dashboard-heading h2,
+.page-heading h2 {
+    font-size: 22px;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.dashboard-heading p,
+.page-heading p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   SHOP STATUS CARD
+======================================== */
+
+.shop-status-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--white);
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(16,42,36,0.03);
+}
+
+.status-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    background: #EAF2EC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    flex-shrink: 0;
+}
+
+.status-information {
+    flex: 1;
+}
+
+.status-information h3 {
+    color: var(--primary);
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.status-information p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status-badge.pending {
+    background: #FFF3D9;
+    color: #966A16;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.primary-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 8px;
+    background: var(--secondary);
+    color: var(--white);
+    padding: 13px 19px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.primary-button:hover {
+    background: var(--secondary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(16,42,36,0.15);
+}
+
+
+/* ========================================
+   OVERVIEW CARDS
+======================================== */
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+    margin-bottom: 30px;
+}
+
+.overview-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 22px;
+    transition: 0.25s ease;
+}
+
+.overview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(16,42,36,0.07);
+}
+
+.overview-icon {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background: #EAF2EC;
+    border-radius: 9px;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.overview-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.overview-card h2 {
+    font-size: 23px;
+    color: var(--primary);
+}
+
+
+/* ========================================
+   GETTING STARTED
+======================================== */
+
+.getting-started {
+    background: var(--white);
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.getting-started > h2 {
+    font-size: 18px;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.getting-started > p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.getting-started-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.getting-started-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.getting-started-item > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #EAF2EC;
+    color: var(--secondary);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.getting-started-item h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--primary);
+}
+
+.getting-started-item p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   REGISTRATION FORM
+======================================== */
+
+.information-card {
+    max-width: 850px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+}
+
+.information-heading {
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+}
+
+.information-heading h3 {
+    color: var(--primary);
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.information-heading p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: #FAFBF9;
+    color: var(--text);
+    outline: none;
+    font-size: 13px;
+    transition: 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(36,118,83,0.09);
+    background: var(--white);
+}
+
+.form-group textarea {
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+
+/* ========================================
+   PHOTOGRAPH UPLOAD
+======================================== */
+
+.upload-box {
+    border: 2px dashed #C8D8CC;
+    border-radius: 10px;
+    background: #FAFCFA;
+    padding: 25px;
+    text-align: center;
+}
+
+.upload-icon {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.upload-box p {
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 15px;
+}
+
+.upload-box input {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 12px;
+    font-size: 12px;
+}
+
+.upload-box small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   TERMS AND CONDITIONS
+======================================== */
+
+.terms-box {
+    padding: 17px;
+    background: #F5F8F5;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 22px;
+}
+
+.terms-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.7;
+    cursor: pointer;
+}
+
+.terms-label input {
+    margin-top: 4px;
+    accent-color: var(--secondary);
+    flex-shrink: 0;
+}
+
+.form-message {
+    margin-bottom: 15px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   EMPTY STATES
+======================================== */
+
+.empty-state {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.empty-state > span {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.empty-state h3 {
+    color: var(--primary);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.seller-footer {
+    padding-top: 35px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.seller-footer p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .overview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .seller-main {
+        padding: 25px;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .seller-sidebar {
+        width: 210px;
+    }
+
+    .shop-status-card {
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .seller-layout {
+        flex-direction: column;
+    }
+
+    .seller-sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 15px;
+    }
+
+    .seller-brand {
+        padding-bottom: 15px;
+    }
+
+    .seller-navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        gap: 7px;
+    }
+
+    .nav-link {
+        padding: 9px 11px;
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    .nav-link span {
+        font-size: 14px;
+        width: auto;
+    }
+
+    .sidebar-bottom {
+        margin-top: 12px;
+        padding-top: 10px;
+    }
+
+    .seller-main {
+        padding: 20px 15px;
+    }
+
+    .seller-topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .seller-topbar h1 {
+        font-size: 21px;
+    }
+
+    .dashboard-heading h2,
+    .page-heading h2 {
+        font-size: 19px;
+    }
+
+    .overview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .overview-card {
+        padding: 15px;
+    }
+
+    .overview-card h2 {
+        font-size: 20px;
+    }
+
+    .shop-status-card {
+        padding: 18px;
+    }
+
+    .shop-status-card .primary-button {
+        width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .information-card {
+        padding: 18px;
+    }
+
+    .getting-started {
+        padding: 18px;
+    }
+
+}
+
+
+/* ========================================
+   BUTTON HOVER EFFECTS
+======================================== */
+
+button,
+.primary-button,
+.nav-link,
+.back-home {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+button:hover:not(:disabled) {
+    cursor: pointer;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(16,42,36,0.15);
+}
+
+.nav-link:hover,
+.back-home:hover {
+    transform: translateX(3px);
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

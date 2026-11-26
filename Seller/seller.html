@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seller Portal | Natant Shield Limited</title>
+
+    <link rel="stylesheet" href="seller.css">
+</head>
+
+<body>
+
+    <div class="seller-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="seller-sidebar">
+
+            <div class="seller-brand">
+                <img src="../Assets/Logo.png" alt="Natant Shield Logo">
+                <div>
+                </div>
+            </div>
+
+            <nav class="seller-navigation">
+
+                <a href="#dashboard" class="nav-link active">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="#shop-registration" class="nav-link">
+                    <span>🏪</span>
+                    Register My Shop
+                </a>
+
+                <a href="#products" class="nav-link">
+                    <span>📦</span>
+                    My Products
+                </a>
+
+                <a href="#orders" class="nav-link">
+                    <span>🛒</span>
+                    Orders
+                </a>
+
+                <a href="#messages" class="nav-link">
+                    <span>💬</span>
+                    Messages
+                </a>
+
+                <a href="#settings" class="nav-link">
+                    <span>⚙️</span>
+                    Settings
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="../index.html" class="back-home">
+                    ← Back to Homepage
+                </a>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="seller-main">
+
+            <!-- TOP BAR -->
+            <header class="seller-topbar">
+
+                <div>
+                    <p class="welcome-label">SELLER ACCOUNT</p>
+                    <h1>Seller Dashboard</h1>
+                </div>
+
+                <div class="seller-profile">
+                    <div class="profile-avatar">S</div>
+                    <div>
+                        <h3>Seller Account</h3>
+                        <p>New Seller</p>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- DASHBOARD -->
+            <section id="dashboard" class="seller-section">
+
+                <div class="dashboard-heading">
+                    <div>
+                        <h2>Welcome to your seller dashboard</h2>
+                        <p>
+                            Manage your food business and grow with Natant Shield.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- SHOP STATUS -->
+                <div class="shop-status-card">
+
+                    <div class="status-icon">🏪</div>
+
+                    <div class="status-information">
+                        <h3>Your shop is not registered yet</h3>
+
+                        <p>
+                            Register your food shop and submit the required
+                            verification documents for administrator approval.
+                        </p>
+
+                        <span class="status-badge pending">
+                            Not Registered
+                        </span>
+                    </div>
+
+                    <a href="#shop-registration" class="primary-button">
+                        Register My Shop
+                    </a>
+
+                </div>
+
+
+                <!-- OVERVIEW CARDS -->
+                <div class="overview-grid">
+
+                    <div class="overview-card">
+                        <span class="overview-icon">📦</span>
+                        <p>Total Products</p>
+                        <h2>0</h2>
+                    </div>
+
+                    <div class="overview-card">
+                        <span class="overview-icon">🛒</span>
+                        <p>Total Orders</p>
+                        <h2>0</h2>
+                    </div>
+
+                    <div class="overview-card">
+                        <span class="overview-icon">💰</span>
+                        <p>Total Sales</p>
+                        <h2>₦0.00</h2>
+                    </div>
+
+                    <div class="overview-card">
+                        <span class="overview-icon">⭐</span>
+                        <p>Shop Rating</p>
+                        <h2>—</h2>
+                    </div>
+
+                </div>
+
+
+                <!-- GETTING STARTED -->
+                <div class="getting-started">
+
+                    <h2>Getting Started</h2>
+
+                    <p>Complete these steps to start selling on Natant Shield.</p>
+
+                    <div class="getting-started-list">
+
+                        <div class="getting-started-item">
+                            <span>1</span>
+                            <div>
+                                <h3>Register your shop</h3>
+                                <p>Provide your business information and location.</p>
+                            </div>
+                        </div>
+
+                        <div class="getting-started-item">
+                            <span>2</span>
+                            <div>
+                                <h3>Submit your shop photograph</h3>
+                                <p>Upload a photograph showing your actual shop.</p>
+                            </div>
+                        </div>
+
+                        <div class="getting-started-item">
+                            <span>3</span>
+                            <div>
+                                <h3>Wait for administrator approval</h3>
+                                <p>Your shop must be approved before it becomes visible to customers.</p>
+                            </div>
+                        </div>
+
+                        <div class="getting-started-item">
+                            <span>4</span>
+                            <div>
+                                <h3>Add your food products</h3>
+                                <p>After approval, you can begin listing your products.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SHOP REGISTRATION -->
+            <section id="shop-registration" class="seller-section">
+
+                <div class="page-heading">
+                    <h2>Register Your Shop</h2>
+                    <p>
+                        Tell us about your food business.
+                    </p>
+                </div>
+
+                <div class="information-card">
+
+                    <div class="information-heading">
+                        <h3>Shop Registration</h3>
+                        <p>
+                            All shop registrations are reviewed by Natant Shield administrators.
+                        </p>
+                    </div>
+
+                    <form id="shopRegistrationForm">
+
+                        <div class="form-group">
+                            <label for="shopName">Shop Name</label>
+                            <input
+                                type="text"
+                                id="shopName"
+                                placeholder="Enter your shop name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ownerName">Shop Owner's Full Name</label>
+                            <input
+                                type="text"
+                                id="ownerName"
+                                placeholder="Enter your full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="sellerEmail">Email Address</label>
+                                <input
+                                    type="email"
+                                    id="sellerEmail"
+                                    placeholder="Enter your email"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sellerPhone">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    id="sellerPhone"
+                                    placeholder="Enter your phone number"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="shopDescription">About Your Shop</label>
+                            <textarea
+                                id="shopDescription"
+                                rows="4"
+                                placeholder="Describe the food items your shop sells..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="shopState">State</label>
+                                <select id="shopState" required>
+                                    <option value="">Select state</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="shopCity">City / Town</label>
+                                <input
+                                    type="text"
+                                    id="shopCity"
+                                    placeholder="Enter your city or town"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="shopAddress">Full Shop Address</label>
+                            <textarea
+                                id="shopAddress"
+                                rows="3"
+                                placeholder="Enter your actual shop address"
+                                required
+                            ></textarea>
+                        </div>
+
+
+                        <!-- SHOP PHOTOGRAPH -->
+                        <div class="form-group">
+
+                            <label for="shopPhotograph">
+                                Photograph of Your Actual Shop
+                            </label>
+
+                            <div class="upload-box">
+
+                                <span class="upload-icon">📷</span>
+
+                                <p>
+                                    Upload a clear photograph of your actual shop.
+                                </p>
+
+                                <input
+                                    type="file"
+                                    id="shopPhotograph"
+                                    accept="image/*"
+                                    required
+                                >
+
+                                <small>
+                                    The photograph will be reviewed by our administrators.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TERMS -->
+                        <div class="terms-box">
+
+                            <label class="terms-label">
+                                <input
+                                    type="checkbox"
+                                    id="sellerTerms"
+                                    required
+                                >
+
+                                <span>
+                                    I confirm that the information provided is
+                                    accurate and that the photograph represents
+                                    my actual shop. I understand that deliberate
+                                    misrepresentation may result in rejection,
+                                    suspension or revocation of my shop access,
+                                    subject to Natant Shield's applicable policies
+                                    and terms.
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                        <div id="registrationMessage" class="form-message"></div>
+
+                        <button type="submit" class="primary-button">
+                            Submit Shop Registration
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- PRODUCTS -->
+            <section id="products" class="seller-section">
+
+                <div class="page-heading">
+                    <h2>My Products</h2>
+                    <p>Manage the food items listed in your shop.</p>
+                </div>
+
+                <div class="empty-state">
+                    <span>📦</span>
+                    <h3>No Products Yet</h3>
+                    <p>
+                        Your shop must be approved before you can add products.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- ORDERS -->
+            <section id="orders" class="seller-section">
+
+                <div class="page-heading">
+                    <h2>Orders</h2>
+                    <p>View and manage customer orders.</p>
+                </div>
+
+                <div class="empty-state">
+                    <span>🛒</span>
+                    <h3>No Orders Yet</h3>
+                    <p>Your customer orders will appear here.</p>
+                </div>
+
+            </section>
+
+
+            <!-- MESSAGES -->
+            <section id="messages" class="seller-section">
+
+                <div class="page-heading">
+                    <h2>Messages</h2>
+                    <p>Communicate with your customers.</p>
+                </div>
+
+                <div class="empty-state">
+                    <span>💬</span>
+                    <h3>No Messages Yet</h3>
+                    <p>Your customer conversations will appear here.</p>
+                </div>
+
+            </section>
+
+
+            <!-- SETTINGS -->
+            <section id="settings" class="seller-section">
+
+                <div class="page-heading">
+                    <h2>Account Settings</h2>
+                    <p>Manage your seller account information.</p>
+                </div>
+
+                <div class="empty-state">
+                    <span>⚙️</span>
+                    <h3>Settings</h3>
+                    <p>Account settings will be available here.</p>
+                </div>
+
+            </section>
+
+
+            <footer class="seller-footer">
+                <p>
+                    © 2026 Natant Shield Limited. All rights reserved.
+                </p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="../Shared/data.js"></script>
+    <script src="seller.js"></script>
+
+</body>
+
+</html>

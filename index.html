@@ -1,0 +1,1114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Natant Shield Limited connects customers with food sellers across Nigeria."
+    >
+
+    <title>Natant Shield Limited | Food Marketplace</title>
+
+    <link rel="stylesheet" href="Shared/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <a href="index.html">
+                <img
+                    src="assets/logo.png"
+                    alt="Natant Shield Limited"
+                >
+            </a>
+        </div>
+
+
+        <nav class="sidebar-navigation">
+
+            <a href="#home" class="nav-link active">
+                <span>⌂</span>
+                Overview
+            </a>
+
+            <a href="#marketplace" class="nav-link">
+                <span>▦</span>
+                Marketplace
+            </a>
+
+            <a href="#categories" class="nav-link">
+                <span>▤</span>
+                Categories
+            </a>
+
+            <a href="#orders" class="nav-link">
+                <span>▣</span>
+                My Orders
+            </a>
+
+            <a href="#cart" class="nav-link">
+                <span>🛒</span>
+                Shopping Cart
+                <span class="cart-count" id="sidebarCartCount">0</span>
+            </a>
+
+            <a href="#account" class="nav-link">
+                <span>♙</span>
+                My Account
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#help" class="nav-link">
+                <span>?</span>
+                Help & Support
+            </a>
+
+            <a href="#settings" class="nav-link">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-content" id="home">
+
+
+        <!-- =================================
+             TOPBAR
+        ================================== -->
+
+        <header class="topbar">
+
+            <div class="topbar-heading">
+
+                <h2>Food Marketplace</h2>
+
+                <p>
+                    Discover quality food products across Nigeria.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+
+                <!-- DELIVERY LOCATION -->
+
+                <button
+                    type="button"
+                    class="location-button"
+                    id="locationButton"
+                >
+
+                    <span class="location-icon">📍</span>
+
+                    <span class="location-information">
+
+                        <small>Delivering to</small>
+
+                        <strong id="currentLocationText">
+                            Select location
+                        </strong>
+
+                    </span>
+
+                    <span>⌄</span>
+
+                </button>
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search food products..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- WISHLIST -->
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="wishlistButton"
+                    aria-label="Wishlist"
+                >
+                    ♡
+                </button>
+
+
+                <!-- CART -->
+
+                <button
+                    type="button"
+                    class="cart-button"
+                    id="cartButton"
+                >
+
+                    🛒
+
+                    <span id="cartCount">0</span>
+
+                </button>
+
+
+                <!-- ACCOUNT -->
+
+                <button
+                    type="button"
+                    class="account-button"
+                    id="accountButton"
+                >
+                    Sign In
+                </button>
+
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================
+             LOCATION SELECTION
+        ================================== -->
+
+        <section
+            class="location-panel"
+            id="locationPanel"
+            hidden
+        >
+
+            <div class="location-panel-heading">
+
+                <div>
+
+                    <h2>Choose Your Delivery Location</h2>
+
+                    <p>
+                        Select where you want your food delivered.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="closeLocationPanel"
+                    aria-label="Close location panel"
+                >
+                    ✕
+                </button>
+
+            </div>
+
+
+            <div class="location-form">
+
+                <div class="form-group">
+
+                    <label for="locationState">
+                        State
+                    </label>
+
+                    <select id="locationState">
+
+                        <option value="">
+                            Select your state
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="locationCity">
+                        City / Town
+                    </label>
+
+                    <input
+                        type="text"
+                        id="locationCity"
+                        placeholder="Enter your city or town"
+                    >
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="saveLocationButton"
+                >
+                    Save Location
+                </button>
+
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="detectLocationButton"
+                >
+                    📍 Detect My Location
+                </button>
+
+            </div>
+
+
+            <p
+                id="locationMessage"
+                class="location-message"
+            ></p>
+
+
+            <p class="location-privacy-note">
+
+                Your location will only be accessed with your permission.
+                You can also enter your delivery destination manually.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             SEARCH RESULTS
+        ================================== -->
+
+        <section
+            class="search-results page-section"
+            id="searchResults"
+            hidden
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>Search Results</h2>
+
+                    <p id="searchMessage">
+                        Products matching your search.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="text-button"
+                    id="clearSearchButton"
+                >
+                    Clear Search
+                </button>
+
+            </div>
+
+
+            <div
+                class="product-grid"
+                id="searchProductGrid"
+            ></div>
+
+
+            <p
+                class="empty-message"
+                id="searchEmptyMessage"
+                hidden
+            >
+                No matching food products were found.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             CATEGORY RESULTS
+        ================================== -->
+
+        <section
+            class="category-results page-section"
+            id="categoryResults"
+            hidden
+        >
+
+            <button
+                type="button"
+                class="back-button"
+                id="backButton"
+            >
+                ← Back to Marketplace
+            </button>
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2 id="categoryTitle">
+                        Food Category
+                    </h2>
+
+                    <p id="categoryDescription"></p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="product-grid"
+                id="categoryProductGrid"
+            ></div>
+
+
+            <p
+                class="empty-message"
+                id="categoryEmptyMessage"
+                hidden
+            >
+                There are currently no products in this category.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             PRODUCT DETAILS
+        ================================== -->
+
+        <section
+            class="product-details page-section"
+            id="productDetails"
+            hidden
+        >
+
+            <button
+                type="button"
+                class="back-button"
+                id="backFromDetails"
+            >
+                ← Back to Marketplace
+            </button>
+
+
+            <div class="details-container">
+
+                <div
+                    class="details-image"
+                    id="detailsImage"
+                ></div>
+
+
+                <div class="details-information">
+
+                    <span class="details-label">
+                        PRODUCT INFORMATION
+                    </span>
+
+
+                    <h1 id="detailsName"></h1>
+
+
+                    <h2 id="detailsPrice"></h2>
+
+
+                    <p id="detailsDescription"></p>
+
+
+                    <div class="seller-information">
+
+                        <span>Sold by</span>
+
+                        <strong id="detailsSeller"></strong>
+
+                    </div>
+
+
+                    <div class="seller-information">
+
+                        <span>Seller's location</span>
+
+                        <strong id="detailsLocation"></strong>
+
+                    </div>
+
+
+                    <div class="quantity-area">
+
+                        <label for="productQuantity">
+                            Quantity
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productQuantity"
+                            min="1"
+                            value="1"
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="addToCartButton"
+                    >
+                        Add to Cart
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="visitSellerShopButton"
+                    >
+                        Visit Seller's Shop
+                    </button>
+
+
+                    <p
+                        id="cartFeedback"
+                        class="cart-feedback"
+                    ></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             SHOPPING CART
+        ================================== -->
+
+        <section
+            class="cart-page page-section"
+            id="cartPage"
+            hidden
+        >
+
+            <button
+                type="button"
+                class="back-button"
+                id="backFromCart"
+            >
+                ← Back to Marketplace
+            </button>
+
+
+            <h2>Shopping Cart</h2>
+
+
+            <p class="page-description">
+                Review the food products you have selected.
+            </p>
+
+
+            <div id="cartItems"></div>
+
+
+            <div id="cartSummary"></div>
+
+        </section>
+
+
+
+        <!-- =================================
+             CHECKOUT
+        ================================== -->
+
+        <section
+            class="checkout-page page-section"
+            id="checkoutPage"
+            hidden
+        >
+
+            <button
+                type="button"
+                class="back-button"
+                id="backFromCheckout"
+            >
+                ← Back to Shopping Cart
+            </button>
+
+
+            <h2>Checkout</h2>
+
+
+            <p class="page-description">
+                Provide your details to continue with your order.
+            </p>
+
+
+            <form
+                id="checkoutForm"
+                class="checkout-layout"
+            >
+
+                <div class="checkout-form-card">
+
+                    <h3>Customer Information</h3>
+
+
+                    <label for="customerName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        required
+                        placeholder="Enter your full name"
+                    >
+
+
+                    <label for="customerPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        required
+                        placeholder="Enter your phone number"
+                    >
+
+
+                    <h3 class="delivery-heading">
+                        Delivery Address
+                    </h3>
+
+
+                    <label for="deliveryState">
+                        Delivery State
+                    </label>
+
+                    <select
+                        id="deliveryState"
+                        required
+                    >
+
+                        <option value="">
+                            Select your state
+                        </option>
+
+                    </select>
+
+
+                    <label for="deliveryCity">
+                        City / Town
+                    </label>
+
+                    <input
+                        type="text"
+                        id="deliveryCity"
+                        required
+                        placeholder="Enter your city or town"
+                    >
+
+
+                    <label for="deliveryAddress">
+                        Full Delivery Address
+                    </label>
+
+                    <textarea
+                        id="deliveryAddress"
+                        rows="4"
+                        required
+                        placeholder="Enter your delivery address"
+                    ></textarea>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button place-order-button"
+                    >
+                        Continue with Order
+                    </button>
+
+
+                    <p
+                        id="checkoutMessage"
+                        class="checkout-message"
+                    ></p>
+
+                </div>
+
+
+
+                <!-- ORDER SUMMARY -->
+
+                <div class="checkout-summary-card">
+
+                    <h3>Order Summary</h3>
+
+
+                    <div id="checkoutOrderItems"></div>
+
+
+                    <div id="checkoutOrderTotal"></div>
+
+
+                    <div class="waybill-notice">
+
+                        <strong>Delivery Charge</strong>
+
+                        <p>
+                            The delivery charge will be calculated
+                            using Natant Shield's delivery pricing rules.
+                        </p>
+
+                        <span>
+                            Delivery charge: Pending calculation
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =================================
+             ORDER CONFIRMATION
+        ================================== -->
+
+        <section
+            class="order-confirmation-page page-section"
+            id="orderConfirmationPage"
+            hidden
+        >
+
+            <div class="order-confirmation-card">
+
+                <div class="confirmation-icon">
+                    ✓
+                </div>
+
+
+                <h2>Order Details Received</h2>
+
+
+                <p id="orderConfirmationMessage"></p>
+
+
+                <p class="confirmation-note">
+                    Your order will be processed according to
+                    Natant Shield's order and delivery procedures.
+                </p>
+
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="continueAfterOrder"
+                >
+                    Continue Shopping
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             HOMEPAGE
+        ================================== -->
+
+        <div id="homepageContent">
+
+
+            <!-- WELCOME SECTION -->
+
+            <section class="welcome" id="welcomeSection">
+
+                <div>
+
+                    <span class="welcome-label">
+                        WELCOME TO NATANT SHIELD
+                    </span>
+
+
+                    <h1>
+                        Discover. Shop. Enjoy.
+                    </h1>
+
+
+                    <p>
+                        Your destination for quality food products
+                        and trusted food sellers across Nigeria.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- HERO SECTION -->
+
+            <section class="hero" id="heroSection">
+
+                <div class="hero-text">
+
+                    <span>
+                        THE NATANT FOOD MARKETPLACE
+                    </span>
+
+
+                    <h1>
+                        Fresh food. Quality products. Trusted sellers.
+                    </h1>
+
+
+                    <p>
+                        Shop foodstuffs, fresh produce, seafood,
+                        grains and delicious ready-to-eat meals
+                        from sellers across Nigeria.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="exploreButton"
+                    >
+                        Explore Marketplace
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 FOOD CATEGORIES
+            ================================== -->
+
+            <section
+                class="categories"
+                id="categories"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Shop by Category</h2>
+
+                        <p>
+                            Find exactly what you need.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="category-grid">
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="Fresh Produce"
+                    >
+
+                        <span>🥬</span>
+
+                        <h3>Fresh Produce</h3>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="Grains & Cereals"
+                    >
+
+                        <span>🌾</span>
+
+                        <h3>Grains & Cereals</h3>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="Seafood & Protein"
+                    >
+
+                        <span>🐟</span>
+
+                        <h3>Seafood & Protein</h3>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="Tubers & Roots"
+                    >
+
+                        <span>🍠</span>
+
+                        <h3>Tubers & Roots</h3>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="Oils & Condiments"
+                    >
+
+                        <span>🫒</span>
+
+                        <h3>Oils & Condiments</h3>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="Packaged Foods"
+                    >
+
+                        <span>🥫</span>
+
+                        <h3>Packaged Foods</h3>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="Ready-to-Eat Foods"
+                    >
+
+                        <span>🍛</span>
+
+                        <h3>Ready-to-Eat Foods</h3>
+
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 FOODSTUFFS NEAR YOU
+                 RAW FOOD PRODUCTS
+            ================================== -->
+
+            <section
+                class="featured"
+                id="foodstuffsSection"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Foodstuffs Near You</h2>
+
+                        <p>
+                            Discover raw food ingredients and groceries
+                            from sellers across Nigeria.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="text-button"
+                        id="viewAllFoodstuffs"
+                    >
+                        View All →
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="product-grid"
+                    id="foodstuffsProductGrid"
+                >
+
+                    <!-- PRODUCTS WILL BE LOADED HERE -->
+
+                </div>
+
+
+                <p
+                    class="empty-message"
+                    id="foodstuffsEmptyMessage"
+                    hidden
+                >
+                    No foodstuffs are currently available.
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================
+                 READY-TO-EAT FOODS
+                 SAME-STATE SELLERS ONLY
+            ================================== -->
+
+            <section
+                class="ready-foods-section"
+                id="readyFoodsSection"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Ready-to-Eat Foods Near You</h2>
+
+                        <p>
+                            Discover freshly prepared meals
+                            from food vendors in your delivery state.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="text-button"
+                        id="viewAllReadyFoods"
+                    >
+                        View All →
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="product-grid"
+                    id="readyFoodsProductGrid"
+                >
+
+                    <!-- READY-TO-EAT PRODUCTS WILL BE LOADED HERE -->
+
+                </div>
+
+
+                <p
+                    class="empty-message"
+                    id="readyFoodsEmptyMessage"
+                >
+
+                    Select your delivery location to discover
+                    available ready-to-eat foods.
+
+                </p>
+
+            </section>
+
+
+        </div>
+
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
+
+        <footer class="main-footer">
+
+            <div>
+
+                <h3>Natant Shield Limited</h3>
+
+                <p>
+                    Connecting customers with food sellers across Nigeria.
+                </p>
+
+            </div>
+
+
+            <p>
+                &copy; 2026 Natant Shield Limited.
+                All rights reserved.
+            </p>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT FILES
+    ====================================== -->
+
+    <script src="Shared/data.js"></script>
+
+    <script src="Shared/script.js"></script>
+
+</body>
+
+</html>
